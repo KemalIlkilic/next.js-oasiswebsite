@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      <h1>Hello Cabins</h1>
+      <h1>Hello Account</h1>
     </div>
   );
 }
