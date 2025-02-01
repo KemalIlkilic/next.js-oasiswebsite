@@ -8,7 +8,7 @@ export default function Page() {
       <Image
         fill
         src={Bg}
-        className="object-cover"
+        className="object-cover object-top"
         alt="Mountains and forests with two cabins"
       />
 
