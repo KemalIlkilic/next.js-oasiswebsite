@@ -1,10 +1,10 @@
 import CabinCard from '@/app/_components/CabinCard';
-import { getCabins } from '../_lib/data-service';
 import CabinList from '../_components/CabinList';
+import { Suspense } from 'react';
+import Spinner from '../_components/Spinner';
 
-export default async function Page() {
+export default function Page() {
   // CHANGE
-  const cabins = await getCabins();
 
   return (
     <div>
@@ -19,7 +19,9 @@ export default async function Page() {
         away from home. The perfect spot for a peaceful, calm vacation. Welcome
         to paradise.
       </p>
-      {cabins.length > 0 && <CabinList cabins={cabins} />}
+      <Suspense fallback={<Spinner />}>
+        <CabinList />
+      </Suspense>
     </div>
   );
 }
